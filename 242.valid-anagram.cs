@@ -11,22 +11,16 @@ public class Solution
 {
     public bool IsAnagram(string s, string t)
     {
-        char[] arrayS = s.ToCharArray();
-        Array.Sort(arrayS);
-
-        char[] arrayT = t.ToCharArray();
-        Array.Sort(arrayT);
-
-        if (arrayS.Length != arrayT.Length)
+        if (s.Length != t.Length)
             return false;
 
-        for (int i = 0; i < arrayS.Length; i++)
-        {
-            if (arrayS[i] != arrayT[i])
-                return false;
-        }
+        char[] arrayS = s.ToCharArray();
+        char[] arrayT = t.ToCharArray();
 
-        return true;
+        Array.Sort(arrayS);
+        Array.Sort(arrayT);
+
+        return arrayS.SequenceEqual(arrayT);
     }
 }
 // @lc code=end
