@@ -12,9 +12,9 @@ public class Solution
     public bool IsAnagram(string s, string t)
     {
         char[] arrayS = s.ToCharArray();
-        char[] arrayT = t.ToCharArray();
-
         Array.Sort(arrayS);
+
+        char[] arrayT = t.ToCharArray();
         Array.Sort(arrayT);
 
         if (arrayS.Length != arrayT.Length)
